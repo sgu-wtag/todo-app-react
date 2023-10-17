@@ -8,6 +8,7 @@ function TrashIcon({ className, ...rest }) {
             viewBox="0 0 24 24"
             fillRule="evenodd"
             clipRule="evenodd"
+            data-testid="svg-icon-trash"
             className={className}
             {...rest}
         >

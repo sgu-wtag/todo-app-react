@@ -69,7 +69,7 @@ function TaskBoard({ isSearching }) {
                 <TaskList isDisabled={isSearching} isTaskCreating={isTaskCreating} onTaskCreation={toggleCreation} />
 
                 {isSearching && (
-                    <div className="task-board__loader-wrapper">
+                    <div data-testid="loader" className="task-board__loader-wrapper">
                         <SpinnerIcon className="task-board__loader" />
                     </div>
                 )}

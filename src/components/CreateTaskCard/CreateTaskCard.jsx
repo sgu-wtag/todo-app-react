@@ -52,7 +52,7 @@ function CreateTaskCard({ onTaskCreation }) {
     };
 
     return (
-        <form className="task-card" onSubmit={handleSubmit}>
+        <form data-testid="create-task-card" className="task-card" onSubmit={handleSubmit}>
             <TextArea
                 className="task-card__input"
                 value={title}

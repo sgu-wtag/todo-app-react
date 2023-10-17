@@ -8,7 +8,7 @@ function TaskListEmpty({ isShowing, taskState }) {
     return (
         <>
             {isShowing && (
-                <div className="task-list__empty">
+                <div data-testid="task-list-empty" className="task-list__empty">
                     <img className="task-list__empty-logo" src={AddFileSVG} alt="Add file icon" />
                     <span className="task-list__empty-message">{message}</span>
                 </div>

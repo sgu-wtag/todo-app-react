@@ -37,7 +37,7 @@ function TaskList({ isDisabled, isTaskCreating, onTaskCreation }) {
     }, [filterState, textToSearch]);
 
     return (
-        <div className="task-list">
+        <div data-testid="task-list" className="task-list">
             <div className="task-list__grid">
                 {isTaskCreating && <CreateTaskCard onTaskCreation={onTaskCreation} />}
                 {taskCards}
