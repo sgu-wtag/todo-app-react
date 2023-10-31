@@ -60,7 +60,9 @@ function CreateTaskCard({ onTaskCreation }) {
                 required
                 onKeyDown={handleTextareaKeyDown}
             />
-            <Button type="submit">Add task</Button>
+            <div className="task-card__body">
+                <Button type="submit">Add task</Button>
+            </div>
         </form>
     );
 }

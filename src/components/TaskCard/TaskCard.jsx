@@ -67,25 +67,33 @@ function TaskCard({ task, isDisabled }) {
     };
 
     return (
-        <div className="task-card">
-            {isEditing ? (
-                <TextArea
-                    className="task-card__input"
-                    value={editTitle}
-                    onChange={handleTitleChange}
-                    onKeyUp={handleTextareaKeyDown}
-                    disabled={isDisabled}
-                />
-            ) : (
-                <h2
-                    className={classNames("task-card__title", {
-                        "task-card__title--complete": isCompleted,
-                    })}
-                >
-                    {title}
-                </h2>
-            )}
-            <span>Created At: {formatDate(createdAt)}</span>
+        <div
+            className={classNames("task-card", {
+                "task-card--disabled": isDisabled,
+            })}
+        >
+            <div className="task-card__header">
+                {isEditing ? (
+                    <TextArea
+                        className="task-card__input"
+                        value={editTitle}
+                        onChange={handleTitleChange}
+                        onKeyUp={handleTextareaKeyDown}
+                        disabled={isDisabled}
+                    />
+                ) : (
+                    <>
+                        <h2
+                            className={classNames("task-card__title", {
+                                "task-card__title--complete": isCompleted,
+                            })}
+                        >
+                            {title}
+                        </h2>
+                        <span className="task-card__created-date">Created At: {formatDate(createdAt)}</span>
+                    </>
+                )}
+            </div>
             <div className="task-card__body">
                 <div className="task-card__actions-wrapper">
                     {isEditing && (
@@ -101,12 +109,12 @@ function TaskCard({ task, isDisabled }) {
                     )}
                     <IconButton icon={<TrashIcon />} onClick={handleDelete} disabled={isDisabled} />
                 </div>
+                {completedAt && (
+                    <span className="task-card__completed-in">
+                        Completed in {daysElapsed === null ? "N/A" : daysElapsed} {pluralizedDayText}
+                    </span>
+                )}
             </div>
-            {completedAt && (
-                <span>
-                    Completed in {daysElapsed === null ? "N/A" : daysElapsed} {pluralizedDayText}
-                </span>
-            )}
         </div>
     );
 }

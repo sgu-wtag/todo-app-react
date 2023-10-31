@@ -1,11 +1,16 @@
-$primary-color: #7a8dfd;
-$secondary-color: #e5e7eb;
+/* Colors */
+$color-primary: #7a8dfd;
+$color-primary-light: #dde2ff;
+$color-secondary: #32394b;
+$color-secondary-light: #bbbdd0;
 $color-success: #0bc375;
 
 $bg-white: #fff;
-
 $bg-gray-50: #f9fafb;
 $bg-gray-300: #d1d5db;
 $bg-gray-400: #9ca3af;
 
-$bg-slate-700: #32394b;
+/* Screens */
+$screen-mobile: 639px; // max-width for mobile screen
+$screen-tablet: 640px;
+$screen-desktop: 1024px;
